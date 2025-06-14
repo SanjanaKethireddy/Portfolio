@@ -518,11 +518,11 @@ img {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;             /* allows wrapping on small screens */
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .nav__item {
-    margin: 0.5rem;
+    margin: 0.4rem;
   }
 
   .home__social {
