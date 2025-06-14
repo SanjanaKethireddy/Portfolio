@@ -1,7 +1,4 @@
-/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-
-/*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
   --font-semi: 600;
@@ -400,10 +397,12 @@ img {
     padding: 4rem 0 2rem;
   }
   .home__social {
-    padding-top: 0;
-    padding-bottom: 2.5rem;
-    flex-direction: row;
-    align-self: flex-end;
+   display: flex;
+  flex-direction: row; /* changed from column to row */
+  gap: 1rem;            /* adds spacing between icons */
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
   }
   .home__social-icon {
     margin-bottom: 0;
@@ -501,3 +500,41 @@ img {
     width: 450px;
   }
 }
+/* ===== FIX: Horizontal navbar and social icons on mobile ===== */
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 1rem;
+    z-index: var(--z-fixed);
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: row;         /* changed from column to row */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;             /* allows wrapping on small screens */
+    gap: 0.5rem;
+  }
+
+  .nav__item {
+    margin: 0.5rem;
+  }
+
+  .home__social {
+    flex-direction: row;         /* changed from column to row */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .home__social-icon {
+    margin-bottom: 0;           /* remove vertical spacing */
+  }
+}
+
